@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Landing Page Section</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Section Background */
+        .landing-section {
+            /* Using a gradient to mimic the deep blue tone of the background */
+            /*background-color: #06398c;
+            background: linear-gradient(135deg, #021a47 0%, #0a4fbc 50%, #021a47 100%);*/
+            background-image: url(images/bg4.png);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Optional: Subtle CSS pattern to hint at the hexagonal background */
+        .landing-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(30deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%, rgba(255,255,255,0.03)),
+                linear-gradient(150deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%, rgba(255,255,255,0.03)),
+                linear-gradient(30deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%, rgba(255,255,255,0.03)),
+                linear-gradient(150deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%, rgba(255,255,255,0.03)),
+                linear-gradient(60deg, rgba(255,255,255,0.03) 25%, transparent 25.5%, transparent 75%, rgba(255,255,255,0.03) 75%, rgba(255,255,255,0.03)),
+                linear-gradient(60deg, rgba(255,255,255,0.03) 25%, transparent 25.5%, transparent 75%, rgba(255,255,255,0.03) 75%, rgba(255,255,255,0.03));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Top Contact Bar */
+        .top-bar {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 20px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .phone-icon {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        /* Main Image Container */
+        .image-container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 20px;
+            margin-top: 10px;
+            z-index: 2;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.01);
+        }
+        /* =========================================
+           Section 2: Bio & Logos 
+           ========================================= */
+        .bio-section {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .featured-logos {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .featured-logos img {
+            max-width: 300px; 
+            height: auto;
+        }
+
+        .bio-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 40px;
+        }
+
+        .bio-profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 0 0 auto; 
+        }
+
+        .bio-profile img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #f0f0f0; 
+        }
+
+        .bio-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bio-name {
+            font-weight: 600;
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .bio-title {
+            font-size: 16px;
+            color: #4a4a4a;
+        }
+
+        .bio-text {
+            flex: 1;
+            border-left: 1px solid #000000;
+            padding-left: 40px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .bio-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+            }
+
+            .bio-text {
+                border-left: none;
+                border-top: 1px solid #cccccc;
+                padding-left: 0;
+                padding-top: 30px;
+            }
+        }
+        /* =========================================
+   Footer Section
+   ========================================= */
+.footer-section {
+    background-color: #232323; /* Dark gray background */
+    color: #b3b3b3; /* Light gray text */
+    padding: 50px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* Footer Links with Vertical Dividers */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links li {
+    display: flex;
+    align-items: center;
+}
+
+/* Adds the vertical line separator between list items */
+.footer-links li:not(:last-child)::after {
+    content: '|';
+    margin-left: 20px;
+    color: #b3b3b3;
+    font-weight: 300;
+}
+
+.footer-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* Disclaimer Text */
+.disclaimer-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #999999;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-links li:not(:last-child)::after {
+        display: none; /* Hides dividers on smaller screens */
+    }
+}
+/* 1. Establish structural positioning on the body element */
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* 2. Style the transparent click overlay block */
+.global-page-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Covers everything on the standard layout layer */
+    cursor: pointer;
+    background-color: transparent;
+}
+    </style>
+</head>
+<body>
+<a href="https://www.ipv4now.com/31CRWZR/8L9QLDB/" class="global-page-overlay" aria-label="View Offer Details"></a>
+    <section class="landing-section">
+        
+        <!-- Top Bar with Phone Number -->
+        <div class="top-bar">
+            <span><span class="phone-icon">&#9742;</span> (888) 322-5790</span>
+        </div>
+
+        <!-- Video Thumbnail Image -->
+        <div class="image-container">
+            <img src="images/Screenshot 2026-08-14 021951.png" alt="Click here to play video">
+        </div>
+
+    </section>
+<!-- SECTION 2: As Seen On & Bio -->
+    <section class="bio-section">
+        <!-- Single image tag for all network logos -->
+        <div class="featured-logos">
+            <img src="images/logose.png" alt="Featured on Fox News, NBC, and ABC">
+        </div>
+
+        <div class="bio-container">
+            <div class="bio-profile">
+                <img src="images/doc-antwerp.jpg" alt="Robert Antwen">
+                <div class="bio-details">
+                    <span class="bio-name">Robert Antwen</span>
+                    <span class="bio-title">Medical Researcher</span>
+                </div>
+            </div>
+
+            <div class="bio-text">
+                <p>Robert Antwen, a medical researcher with over 26 years' experience, is dedicated to studying metabolic disorders and uncovering natural solutions for type 2 diabetes. He focuses on restoring the body's natural glucose-regulating enzymes rather than relying on conventional drugs. A collaborator with researchers from Harvard, Yale, and Boston University, his work centers on science-backed herbal medicine and metabolic health. Outside the lab, he enjoys family time, hiking, healthy cooking, and teaching others how to live longer, medication-free lives.</p>
+            </div>
+        </div>
+    </section>
+    <section class="footer-section">
+    <div class="footer-container">
+        <p class="copyright">Copyright &copy; 2026 PhytageLabs. All Rights Reserved.</p>
+        
+        <ul class="footer-links">
+            <li><a href="#">Terms And Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Disclaimer</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+
+        <p class="disclaimer-text">
+            The information provided on this site is for informational purposes only and any likeness to any individual (living or dead) mentioned in the above content is entirely coincidental. This is not intended as a substitute for advice from your physician or other health care professional or any information contained on or in any product label or packaging. You should not use the information on this site for diagnosis or treatment of any health problem or for prescription of any medication or other treatment. You should consult with a healthcare professional before starting any diet, exercise or supplementation program, before taking any medication, or if you have or suspect you might have a health problem. You should not stop taking any medication without first consulting your physician. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using this product.
+        </p>
+    </div>
+</section>
+</body>
+</html>
